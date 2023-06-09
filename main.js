@@ -16,15 +16,15 @@ function guessFunction() {
     classEffect("body", "victory");
 
     $("#title").text("You are a Winner Mate");
-    $("message").text("Correct Number");
-    $("number").text(ans);
+    $(".message").text("Correct Number");
+    $(".number").text(ans);
     if (highscore < score) {
       highscore = score;
     }
   } else if (val <= 2 && score != 0) {
     voiceAlert("very-close");
     $("#title").text("Too close Keep Trying!!");
-    $("message").text("Very Close");
+    $(".message").text("Very Close");
     score--;
   } else if (val <= 4 && score != 0) {
     voiceAlert("close");
