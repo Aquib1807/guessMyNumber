@@ -9,7 +9,8 @@ $(".check").on("click", function () {
 });
 function guessFunction() {
   Gn = $(".guess").val();
-  let val = Gn - ans;
+  let val = Math.abs(Gn - ans);
+
   if (val === 0) {
     voiceAlert("victory");
     classEffect("body", "victory");
