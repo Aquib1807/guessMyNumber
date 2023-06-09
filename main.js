@@ -1,4 +1,4 @@
-const ans = Math.trunc(Math.random() * 20) + 1;
+let ans = Math.floor(Math.random() * 20) + 1;
 
 let guessNumber,
   score = 20,
@@ -62,9 +62,10 @@ function guessFunction() {
   document.getElementsByClassName("highscore")[0].innerHTML = highscore;
 }
 
-const againBtnElement = document.getElementsByClassName("again")[0];
-againBtnElement.addEventListener("click", refreshFunction);
+// const againBtnElement = document.getElementsByClassName("again")[0];
+// againBtnElement.addEventListener("click", refreshFunction);
 function refreshFunction() {
+  ans = Math.floor(Math.random() * 20) + 1;
   score = 20;
   var audio = new Audio("sounds/game-start.mp3");
   audio.play();
@@ -73,3 +74,7 @@ function refreshFunction() {
   document.body.style.background = "#222";
   document.getElementsByClassName("score")[0].innerHTML = score;
 }
+$(".again").on("click", function () {
+  $("#title").text("Guess My Number!");
+  refreshFunction();
+});
